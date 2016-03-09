@@ -1,0 +1,29 @@
+	<form method="post" name="myForm">
+		<h1>Log in</h1>
+								
+								E-mail:
+								<input type="email" ng-model="logger.uId" name="uId" id="uId" required/><br/>
+								<span style="color:red" ng-show="myForm.uId.$error.required && myForm.uId.$touched">		Email is required.		</span>
+								<span style="color:red" ng-show="myForm.uId.$error.email">		Email is in invalid format.		</span>
+								<br/>
+
+								Password:
+								<input type="password" id="password" ng-model="logger.password" name="password" ng-minlength="6" ng-maxlength="18"  required/><br/>
+								<span style="color:red" ng-show="myForm.password.$error.required && myForm.password.$touched">Password is required.	</span>
+								<span style="color:red" ng-show="myForm.password.$error.minlength || myForm.password.$error.maxlength">Password should be between 6 to 18 characters.	</span>
+									<br/>
+
+								<p class="keeplogin">
+									<input type="checkbox" name="loginkeeping" id="loginkeeping" value="loginkeeping" />
+									<label for="loginkeeping">Keep me logged in</label>
+								</p>
+								
+								<p class="login"> 
+									<input type="submit" ng-click="parameters()" value="Login"></input>
+								</p> 
+								
+								<p>
+									Not a member yet ?
+									<a href="#/register" class="to_register">Join us</a> 		
+								</p>
+						</form>

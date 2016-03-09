@@ -1,0 +1,13 @@
+
+				<span ng-show="status==200">
+					<b>Status:</b>{{status}}<br/>   
+					<b>Message:</b>Successful login.<br/>
+					 <b>Token: </b>{{token}}<br/>
+					 <b>Expiry Time:</b>{{expiry | date:'medium'}}
+				</span>
+							
+				<span ng-show="status==400"><b>Status:</b>{{status}}<br/><b>Error Message:</b>Invalid User Id and Password.</span>
+							
+				<span ng-show="status==401"><b>Status:</b>{{status}}<br/><b>Error Message:</b>User Id and Password mismatch.</span>
+							
+				<span ng-show="status!=200&&status!=400&&status!=401"><b>Status:</b>{{status}}<br/><b>Error Message:</b>{{errorMsg}}</span>
