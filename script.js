@@ -16,19 +16,6 @@ app.config(['$routeProvider', function($routeProvider) {
     templateUrl: 'wrap.html',
     controller: 'validateCtrl'
   });
-/*
-  // Login
-  $routeProvider.when('login', {
-    templateUrl: 'login.html',
-    //controller: 'validateCtrl'
-  });
-
-  //Output
-  $routeProvider.when('/output', {
-    templateUrl: 'output.html',
-    //controller: 'validateCtrl'
-  });
-  */
   // Register
   $routeProvider.when('/register', {
     templateUrl: 'register.html',
