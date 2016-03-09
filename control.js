@@ -63,10 +63,7 @@ app.controller('validateCtrl', function($scope,$http,$window,$location) {
 		// function calling all other functions
    $scope.parameters = function() {
 			myHTTP(myJSON());
-			//document.getElementById("log").style.display="none";
-			//document.getElementById("display").style.display="visible";
 			$scope.template ='output.html';
-			//$window.location.href="#/output";
 		}
 });
 
