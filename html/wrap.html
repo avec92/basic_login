@@ -1,0 +1,15 @@
+<!-- This file is the wrapper file for login page and output page which shows the output of login status and message -->
+<div id="container_demo" ng-controller="validateCtrl" > <!-- Controller is included here -->
+	<div id="wrapper" >
+		<div id="container_demo"  >
+			<div id="login" class="animate form" ng-hide="template"> <!-- This division will be hidden when the value of template changes to true -->
+				<!-- Directive is called here for the login form -->
+				<my-user id="log" bind="logger.uId" user="myUser"></my-user>
+			</div>
+		</div>
+		
+		<div id="login" ng-show="template"> <!-- This division will be shown when the value of template changes to true -->
+			<div id="display" ng-include="template"></div> <!--This will call the output html file and display the login status -->
+		</div>
+	</div>
+</div>

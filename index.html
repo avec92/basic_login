@@ -1,59 +1,63 @@
+<!-- This is the main page where all the other pages are called for the single page view -->
 <!DOCTYPE html>
 <html>
 
-  <head>
-	
-    <script src="angular.min.js"></script>
-    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" />
-	<script src="jquery.min.js"></script>
-	<script src="http://code.angularjs.org/1.4.9/angular-route.js"></script>
-	<link rel="stylesheet" href="style.css" />
-	<script src="script.js"></script>
-	<script src="control.js"></script>
-	
-<style>
-	body {
-		background-image: url("./img/bg.jpg");
-		background-color: #cccccc;
-	}
-</style>
-  </head>
+	<head>
+		<!-- All the files that need to be included are mentioned here -->
+		<script src="angular.min.js"></script>
+		<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" />
+		<script src="jquery.min.js"></script>
+		<script src="http://code.angularjs.org/1.4.9/angular-route.js"></script>
+		<link rel="stylesheet" href="css/style.css"></link> <!-- This file contains all the style sheets-->
+		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+		<script src="js/routes.js"></script>    <!-- This file defines the ng-routes that will be used. -->
+		<script src="js/control.js"></script>    <!-- This file contains the controllers description and directive -->
+		<style>
+			body{
+				background-image: url("./img/bg.jpg");
+			}
+		</style>
+	</head>
+	  
   <body ng-app="myApp">
-  
-  <nav class="navbar navbar-inverse">
-<div class="nav navbar-fixed-top navbar-custom">
-    <div class="container-fluid">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="#/">WebSiteName</a>
-        </div>
-        <div class="collapse navbar-collapse" id="myNavbar" ng-app="myapp">
-            <ul class="nav navbar-nav">
-                <li class="active"><a href="#">Home</a></li>
-                <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Page 1 <span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="#">Page 1-1</a></li>
-                        <li><a href="#">Page 1-2</a></li>
-                        <li><a href="#">Page 1-3</a></li>
-                    </ul>
-                </li>
-                <li><a href="#">Page 2</a></li>
-                <li><a href="#">Page 3</a></li>
-            </ul>
-            <ul class="nav navbar-nav navbar-right">
-                <li><a href="#/register"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-                <li><a href="#/log_in"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-            </ul>
-        </div>
-    </div>
-	</div>
-</nav> 
-    <div ng-view=""></div>
+  <!-- The navigation bar has been coded here -->
+		  <nav class="navbar navbar-inverse">
+			<div class="nav navbar-fixed-top navbar-custom">
+				<div class="container-fluid">
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+						<a class="navbar-brand" href="#/">WebSiteName</a>
+					</div>
+					
+					<div class="collapse navbar-collapse" id="myNavbar" ng-app="myapp">
+						<ul class="nav navbar-nav">
+							<li class="active"><a href="#">Home</a></li>
+							<li class="dropdown">
+								<a class="dropdown-toggle" data-toggle="dropdown" href="#">Page 1 <span class="caret"></span></a>
+								<ul class="dropdown-menu">
+									<li><a href="#">Page 1-1</a></li>
+									<li><a href="#">Page 1-2</a></li>
+									<li><a href="#">Page 1-3</a></li>
+								</ul>
+							</li>
+							<li><a href="#">Page 2</a></li>
+							<li><a href="#">Page 3</a></li>
+						</ul>
+						<ul class="nav navbar-nav navbar-right">
+							<li><a href="#/register"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+							<li><a href="#/log_in"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</nav> 
+<!-- This division is used for viewing the other pages that will be called in this page -->	
+	<div ng-view=""></div>
   </body>
 
 </html>

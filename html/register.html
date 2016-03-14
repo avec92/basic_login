@@ -1,0 +1,67 @@
+<!-- This page is specifically used for creating the registration form -->
+<div id="container_demo" >
+    <div id="wrapper">
+        <div id="login" class="animate form">
+            <form  action="mysuperscript.php" autocomplete="on">
+                <h1>Sign Up</h1>
+                <p>
+                    <label for="fname" class="fname" data-icon="f" > First Name: </label>
+                    <input id="fname" name="fname" required="required" type="text" placeholder="Arina"/>
+                </p>
+				
+				<p>
+                    <label for="lname" class="lname" data-icon="l" > Last Name: </label>
+                    <input id="lname" name="lname" required="required" type="text" placeholder="Parthos"/>
+                </p>
+
+				<p>
+                    <label for="username" class="uname" data-icon="u" > Username </label>
+                    <input id="username" name="username" required="required" type="text" placeholder="myusername"/>
+                </p>
+
+                <p>
+                    <label for="password" class="youpasswd" data-icon="p"> Password </label>
+                    <input id="password" name="password" required="required" type="password" placeholder="eg. X8df!90EO" />
+                </p>
+
+				<p>
+                    <label for="confirmpassword" class="confirmpassword" data-icon="c" > Confirm Password </label>
+                    <input id="confirmpassword" name="confirmpassword" required="required" type="password"/>
+                </p>
+
+				<p>
+                    <label for="email" class="email" data-icon="e" > E-mail: </label>
+                    <input id="email" name="email" required="required" type="text" placeholder="mymail@mail.com"/>
+                </p>
+		
+				<p>
+					<!-- This is used for selecting the date of birth -->
+						<label for="dob" class="dob" data-icon="dob" > Birth Date:</label>
+						<input type="date"></input>
+					<br>
+				</p>
+
+				<p>
+					<label for="pic" class="pic" data-icon="dp" > Upload your Profile Picture:</label>
+					<input type="file" name="pic" accept="image/*">
+				</p>
+
+				<p>
+                    <label for="city" class="city" data-icon="ci" > City: </label>
+                    <input id="city" name="city" required="required" type="text" placeholder="Bangalore"/>
+                </p>
+				
+				<p>
+                    <label for="country" class="country" data-icon="co" > E-mail: </label>
+                    <input id="country" name="country" required="required" type="text" placeholder="India"/>
+                </p>
+
+				<p class="login">
+				<!-- This is a button of type submit which calls the function submit data which then checks the data and inserts it into the database -->
+                   <input type="submit" ng-click="insertdata()" value="Submit"/>
+                </p>
+
+            </form>
+		 </div>
+	</div>
+</div>

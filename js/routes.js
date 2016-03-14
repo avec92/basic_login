@@ -8,18 +8,18 @@ app.config(['$routeProvider', function($routeProvider) {
 
   // Home 
   $routeProvider.when('/', {
-    templateUrl: 'home.html',
-    controller: 'HomeController'
+    templateUrl: 'html/home.html',
+    controller: 'HomeController' //controller for home page
   });
 	//Wrapper
   $routeProvider.when('/log_in', {
-    templateUrl: 'wrap.html',
-    controller: 'validateCtrl'
+    templateUrl: 'html/wrap.html',
+    controller: 'validateCtrl'   //controller for login page
   });
   // Register
   $routeProvider.when('/register', {
-    templateUrl: 'register.html',
-    controller: 'RegisterController'
+    templateUrl: 'html/register.html',
+    controller: 'RegisterController'         //controller for register page
   });
 
   // Otherwise, redirect to Home

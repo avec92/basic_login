@@ -19,10 +19,20 @@
     z-index: 22;
 }
 
-.navbar-custom {
-    color: #FFFFFF;
-    background-color: #33ccff;
+body {
+    background-color: #cccccc;
 }
+
+        .carousel-inner > .item > img,
+        .carousel-inner > .item > a > img {
+            width: 70%;
+            margin: auto;
+        }
+		
+		.navbar-custom {
+			color: #FFFFFF;
+			background-color: #33ccff;
+		}
 
 #wrapper h1{
     font-size: 48px;

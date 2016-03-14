@@ -35,7 +35,7 @@ app.controller('validateCtrl', function($scope,$http,$window,$location) {
 			pl.u_id=u_id;
 			pl.pswd=$scope.user.password;
 			finalJSON={pl};
-			var param=JSON.stringify(finalJSON);
+			var param=JSON.stringify(finalJSON); // param contains all the user information in a JSON format
 			return param;
 		}
 		
@@ -47,32 +47,32 @@ app.controller('validateCtrl', function($scope,$http,$window,$location) {
 					url : "http://tusker-dev.logistimo.com/tusker-service/auth/tokens",
 					data: param
 				  }).then(function mySuccess(response) {     //function for taking actions when the status code is 200 and authentication is a success. 
-						 $scope.status = response.status;	  
+						// Binds messages to display to html pages						
+						$scope.status = response.status;	  
 						 $scope.expiry=response.data.pl.tkn;
-						 $scope.token=response.data.pl.tkn;
-				         alert("aaaaaaa");
-							
+						 $scope.token=response.data.pl.tkn;							
 					}).catch(function error(response) {           //function for taking actions when response is an error.
-						 $scope.status = response.status;
+						// Binds messages to display to html pages						
+						$scope.status = response.status;
 						 $scope.errorMsg= response.data.msg;
-                         $scope.template ='output.html';						 
 					});
 		}	   
 
 	
 		// function calling all other functions
    $scope.parameters = function() {
-			myHTTP(myJSON());
-			$scope.template ='output.html';
+			myHTTP(myJSON()); //calling service function and creating JSON
+			$scope.template ='html/output.html';
 		}
 });
 
+//Directive creation for login page
 var myDirectives = angular.module('myDirectives', []);
 
-myDirectives.directive('myUser', function() {
-  return {
-	restrict: 'AE',
-	scope: false,
-    templateUrl: 'logger.html'
-  };
-});
+	myDirectives.directive('myUser', function() {
+	  return {
+		restrict: 'AE',
+		scope: false, // This indicates the scope to be false, leading to no confliction in passing of data from directive to controller
+		templateUrl: 'html/logger.html'  // This calls the html file logger
+	  };
+	});

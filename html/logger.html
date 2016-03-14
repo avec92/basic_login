@@ -1,14 +1,17 @@
+<!-- This page is a login form page which has been called inside wrap.html using a directive -->
 	<form method="post" name="myForm">
 		<h1>Log in</h1>
 								
 								E-mail:
 								<input type="email" ng-model="logger.uId" name="uId" id="uId" required/><br/>
+								<!-- These are inline validations for checking the required field and email format-->
 								<span style="color:red" ng-show="myForm.uId.$error.required && myForm.uId.$touched">		Email is required.		</span>
 								<span style="color:red" ng-show="myForm.uId.$error.email">		Email is in invalid format.		</span>
 								<br/>
 
 								Password:
 								<input type="password" id="password" ng-model="logger.password" name="password" ng-minlength="6" ng-maxlength="18"  required/><br/>
+								<!-- These are inline validations for checking the required field and password format-->
 								<span style="color:red" ng-show="myForm.password.$error.required && myForm.password.$touched">Password is required.	</span>
 								<span style="color:red" ng-show="myForm.password.$error.minlength || myForm.password.$error.maxlength">Password should be between 6 to 18 characters.	</span>
 									<br/>
@@ -19,6 +22,7 @@
 								</p>
 								
 								<p class="login"> 
+									<!-- It is button of submit type which calls in a function called parameters() inside the controller validateCtrl -->
 									<input type="submit" ng-click="parameters()" value="Login"></input>
 								</p> 
 								
